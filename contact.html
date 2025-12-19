@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ascendia Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Ascendia Management Logo">
+                <div class="logo-text">
+                    <h1>ASCENDIA MANAGEMENT</h1>
+                    <span>Professional HR Solutions</span>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="csr.html" class="nav-link">CSR Program</a>
+                <a href="hopefulminds.html" class="nav-link">Hopeful Minds</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Contact Ascendia Management</h1>
+        <p class="hero-subtitle">Get in touch with us for professional HR solutions and consultation</p>
+    </section>
+
+    <div style="max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+            <h2 style="color: #0d6efd; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #e9ecef;">Get In Touch</h2>
+            
+            <div style="margin-top: 25px;">
+                <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px;">
+                    <i class="fas fa-envelope" style="color: #0d6efd; font-size: 1.2rem; margin-top: 5px;"></i>
+                    <div>
+                        <h4 style="color: #0d6efd; margin-bottom: 5px;">Email</h4>
+                        <p>8ascendiasmg8@gmail.com</p>
+                        <small style="color: #666;">For general inquiries and consultations</small>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px;">
+                    <i class="fas fa-phone" style="color: #0d6efd; font-size: 1.2rem; margin-top: 5px;"></i>
+                    <div>
+                        <h4 style="color: #0d6efd; margin-bottom: 5px;">Phone</h4>
+                        <p>09-765167785</p>
+                        <p>09-891160348</p>
+                        <p>09794729456</p>
+                        <small style="color: #666;">Available: Mon-Fri, 9:00 AM - 5:00 PM</small>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px;">
+                    <i class="fas fa-map-marker-alt" style="color: #0d6efd; font-size: 1.2rem; margin-top: 5px;"></i>
+                    <div>
+                        <h4 style="color: #0d6efd; margin-bottom: 5px;">Office Address</h4>
+                        <p>No.323, AungTakon Street</p>
+                        <p>29 Wards, NorthDagon</p>
+                        <p>YANGON, Myanmar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+            <h2 style="color: #0d6efd; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #e9ecef;">Send Us a Message</h2>
+            
+            <form id="contactForm">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Full Name *</label>
+                    <input type="text" id="name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Company Name</label>
+                    <input type="text" id="company" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Email Address *</label>
+                    <input type="email" id="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Phone Number</label>
+                    <input type="tel" id="phone" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Service Interested In</label>
+                    <select id="service" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+                        <option value="">Select a service</option>
+                        <option value="recruitment">Recruitment & Selection</option>
+                        <option value="training">Training & Development</option>
+                        <option value="performance">Performance Management</option>
+                        <option value="consulting">HR Consulting</option>
+                        <option value="csr">CSR Program Partnership</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 25px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Your Message *</label>
+                    <textarea id="message" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; min-height: 150px;"></textarea>
+                </div>
+                
+                <button type="submit" style="width: 100%; padding: 15px; background: #0d6efd; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; transition: 0.3s;">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase Configuration and Contact Form Script -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/contact-form.js"></script>
+</body>
+</html>

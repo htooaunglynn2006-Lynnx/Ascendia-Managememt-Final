@@ -148,6 +148,87 @@ body {
     padding-bottom: 15px;
     border-bottom: 2px solid var(--light-blue);
 }
+/* Section */
+.content-section {
+    padding: 60px 5%;
+    background-color: #f9fbff;
+}
+
+/* Title */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: var(--primary-blue);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background: var(--light-blue);
+    display: block;
+    margin: 12px auto 0;
+}
+
+/* Grid Layout */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ၃ ပုံစီ */
+    gap: 30px;
+}
+
+/* Team Card */
+.team-member {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.team-member img {
+    width: 100%;
+    max-width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid var(--light-blue);
+}
+
+/* Name */
+.team-member h4 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+/* Position */
+.team-member .position {
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+/* Bio */
+.team-member .bio,
+.team-member p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+
 
 /* Buttons */
 .btn {
@@ -228,7 +309,18 @@ body {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     color: var(--text-muted);
 }
+/* Responsive */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet: ၂ ပုံ */
+    }
+}
 
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* Mobile: ၁ ပုံ */
+    }
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .mobile-menu-btn {
@@ -290,3 +382,4 @@ body {
         text-align: center;
     }
 }
+

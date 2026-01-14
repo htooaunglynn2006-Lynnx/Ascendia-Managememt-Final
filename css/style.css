@@ -148,11 +148,6 @@ body {
     padding-bottom: 15px;
     border-bottom: 2px solid var(--light-blue);
 }
-/* Section */
-.content-section {
-    padding: 60px 5%;
-    background-color: #f9fbff;
-}
 
 /* Title */
 .section-title {
@@ -382,4 +377,5 @@ body {
         text-align: center;
     }
 }
+
 

@@ -1,0 +1,6 @@
+# Allow all crawlers
+User-agents: *
+Disallow:
+
+# Specify sitemap location
+Sitemap: https:/www.ascendiamanagement.com/sitemap.xml

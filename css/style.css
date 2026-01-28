@@ -103,7 +103,33 @@ body {
     color: var(--primary-blue);
     padding: 5px;
 }
+/* CSR Swipe Slider */
+.csr-slider {
+    overflow: hidden;
+    width: 100%;
+}
 
+.csr-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.csr-track img {
+    min-width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    .csr-track img {
+        min-width: 50%;
+        height: 300px;
+    }
+}
 /* Hero Sections */
 .hero {
     background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
@@ -416,6 +442,7 @@ body {
         text-align: center;
     }
 }
+
 
 
 

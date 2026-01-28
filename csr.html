@@ -96,13 +96,18 @@
             </div>
         </div>
     </section>
-               <section class="content-section">
-                <h2 class="section-title">Our CSR Moment</h2>
-                <img src="./images/pic1.jpg"width="500px" height="300px" alt="CSR moments">
-                <img src="./images/pic2.jpg" width="500px" height="300px" alt="CSR moments">
-                <img src="./images/CSRFounder.jpg" width="500px" height="300px" alt="CSR moments">
-                <img src="./images/CSRFounder2.png" width="500px" height="300px" alt="CSR moments">
-               </section>
+         <section class="content-section">
+    <h2 class="section-title">Our CSR Moment</h2>
+
+    <div class="csr-slider">
+        <div class="csr-track">
+            <img src="./images/pic1.jpg" alt="CSR moments">
+            <img src="./images/pic2.jpg" alt="CSR moments">
+            <img src="./images/CSRFounder.jpg" alt="CSR moments">
+            <img src="./images/CSRFounder2.png" alt="CSR moments">
+        </div>
+    </div>
+</section>
     <section class="content-section">
         <h2 class="section-title">CSR Impact Report</h2>
         
@@ -214,8 +219,36 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+const slider = document.querySelector('.csr-slider');
+const track = document.querySelector('.csr-track');
+
+let startX = 0;
+let currentTranslate = 0;
+let index = 0;
+const totalSlides = track.children.length;
+
+slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+});
+
+slider.addEventListener('touchend', e => {
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if (diff > 50 && index < totalSlides - 1) {
+        index++;
+    } else if (diff < -50 && index > 0) {
+        index--;
+    }
+
+    currentTranslate = -index * slider.offsetWidth;
+    track.style.transform = `translateX(${currentTranslate}px)`;
+});
+</script>
 </body>
 
 </html>
+
 
 
